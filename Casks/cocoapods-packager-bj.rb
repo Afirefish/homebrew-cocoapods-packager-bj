@@ -7,7 +7,15 @@ cask "cocoapods-packager-bj" do
   desc "Based on cocoapods-package, support build swift framework"
   homepage "https://github.com/Afirefish/cocoapods_packager-bj"
 
-  def install
-      bin.install "cocoapods-packager-bj"
+  depends_on "cocoapods"
+  
+  def install    
+    # 添加插件的安装步骤
+    system "pod", "plugin", "install", "cocoapods-packager-bj"
   end
+
+  test do
+    system "pod", "bjpackage" "--help"
+  end
+  
 end
