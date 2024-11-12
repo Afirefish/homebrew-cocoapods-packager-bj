@@ -6,9 +6,6 @@ cask "cocoapods-packager-bj" do
   name "cocoapods-packager-bj"
   desc "Based on cocoapods-package, support build swift framework"
   homepage "https://github.com/Afirefish/cocoapods_packager-bj"
-  
-  depends_on "ruby"
-  depends_on "cocoapods"
 
   def install
       bin.install "cocoapods-packager-bj"
